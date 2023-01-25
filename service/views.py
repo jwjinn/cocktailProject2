@@ -175,6 +175,45 @@ def ingredient(request):
     # return render(request, 'service/ingredient.html')
 
 
+def ing_query_maker(list):
+    temp = []
+
+    for i in list:
+        # temp_string = '{"range": { "%s" : {"gt": 0}}},' % (i)
+        # temp.append(json.loads(temp_string))
+        # temp.append(temp_string)
+        temp_string = f'{{ "range":{{"{i}": {{"gt": 0 }}}}}}'
+        temp.append(json.loads(temp_string))
+
+    # temp = temp[:-1]
+    return temp
+
+
+def search_django_ing(keyword):
+    es = Elasticsearch("http://chae2:chae1234@34.64.247.4:9200")
+    index = "cktl_info_all"
+    body = f'{{"query": {{"bool": {{"must": {keyword}}}}}, "size": 300}}'
+    body2 = json.loads(body.replace("'", '"'))
+    # print(body2)
+    res = es.search(index=index, body=body2)
+    return res["hits"]["hits"]
+
+
+def ingredientajax(request):
+    ingredient = request.POST.getlist("ingredient")
+    ing_query = ing_query_maker(ingredient)
+
+    # key = search_django_ing(k1)
+    # print(ing_query)
+    key = search_django_ing(ing_query)
+    item_name = []
+    for i in range(len(key)):
+        item_name.append(key[i]["_source"]["name"])
+    item_list = {"item": item_name}
+    print(item_list)
+    return JsonResponse(item_list)
+
+
 # 이 칵테일의 이름은?
 def image(request):
     if logInCheck(request):
@@ -204,10 +243,10 @@ def imageAjax(request):
     hadoopFileName = trimImageName + day
 
     hadoopFileName = (
-            trimImageName[0:dotPosition]
-            + "-"
-            + day
-            + trimImageName[dotPosition: len(trimImageName)]
+        trimImageName[0:dotPosition]
+        + "-"
+        + day
+        + trimImageName[dotPosition : len(trimImageName)]
     )
 
     uploadImage = Uploadimage(
@@ -232,7 +271,14 @@ def imageAjax(request):
     하둡 저장용 경로.
     """
     ## 서버용 하둡에 적재할
+<<<<<<< HEAD
     # fs = FileSystemStorage(location='/home/jwjinn/attachement/images', base_url='/home/jwjinn/attachement/images')
+=======
+    fs = FileSystemStorage(
+        location="/home/jwjinn/attachement/images",
+        base_url="/home/jwjinn/attachement/images",
+    )
+>>>>>>> chae
 
     ## 로컬 경로(주우진)
     fs = FileSystemStorage(location='/home/joo/images', base_url='/home/joo/images')
@@ -255,8 +301,7 @@ def imageAjax(request):
 
     print(rankCnn)
 
-    context = {"private": 15,
-               "cnnResult": rankCnn}
+    context = {"private": 15, "cnnResult": rankCnn}
 
     fs.save(hadoopFileName, img)
     return JsonResponse(context)
@@ -306,7 +351,7 @@ def changeImageAjax(request):
 
     k.imageLocation(img)
 
-    k.saveLocation(f'{os.getcwd()}/media/gan/{email}.png')
+    k.saveLocation(f"{os.getcwd()}/media/gan/{email}.png")
     k.Gan_prc()
 
     return JsonResponse(context)
