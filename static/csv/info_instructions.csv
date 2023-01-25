@@ -1,0 +1,392 @@
+index,name,Shake,Stir,Float,Frost,Blend,Build
+1,A1,1,0,0,0,0,0
+2,ABC,0,0,0,0,0,0
+3,Ace,1,0,0,0,0,0
+4,ACID,0,0,0,0,0,0
+5,Adam,1,0,0,0,0,0
+6,AT&T,0,1,0,0,0,0
+7,A. J.,1,0,0,0,0,0
+8,Affair,0,0,0,0,0,0
+9,Apello,0,1,0,0,0,0
+10,Avalon,0,1,0,0,0,0
+11,Abilene,0,1,0,0,0,0
+12,Addison,1,0,0,0,0,0
+13,Almeria,1,0,0,0,0,0
+14,Acapulco,1,0,0,0,0,0
+15,Affinity,0,1,0,0,0,0
+16,Applecar,1,0,0,0,0,0
+17,Aviation,1,0,0,0,0,0
+18,Addington,1,0,0,0,0,0
+19,After sex,0,0,0,0,0,0
+20,Afterglow,0,0,0,0,0,0
+21,Afternoon,0,0,0,0,0,1
+22,Alexander,1,0,0,0,0,0
+23,Algonquin,1,0,0,0,0,0
+24,Allegheny,1,0,0,0,0,0
+25,B-52,0,1,0,0,0,0
+26,B-53,0,0,0,0,0,0
+27,Bijou,0,1,0,0,0,0
+28,Boxcar,1,0,0,0,0,0
+29,Big Red,0,0,0,0,0,0
+30,Bellini,0,1,0,0,0,0
+31,Bramble,0,1,0,0,0,1
+32,Balmoral,0,1,0,0,0,0
+33,Bluebird,0,1,0,0,0,0
+34,Brooklyn,0,1,0,0,0,0
+35,Bora Bora,1,0,0,0,1,0
+36,Boomerang,0,1,0,0,0,0
+37,Barracuda,1,0,0,0,0,0
+38,Brigadier,0,1,0,0,0,0
+39,Broadside,0,0,0,0,0,0
+40,Buccaneer,0,1,0,0,0,0
+41,Brain Fart,0,0,0,0,0,0
+42,Blackthorn,0,1,0,0,0,0
+43,Bob Marley,0,0,0,0,0,0
+44,Bible Belt,0,0,0,0,0,0
+45,Bubble Gum,0,0,0,0,0,0
+46,Bumble Bee,0,0,0,0,0,0
+47,Baby Eskimo,0,1,0,0,0,0
+48,Boston Sour,1,0,0,0,1,0
+49,Bahama Mama,0,0,0,0,0,0
+50,Casino,1,0,0,0,0,0
+51,Cafe Savoy,0,1,0,0,0,0
+52,Cream Soda,0,0,0,0,0,0
+53,Cuba Libra,0,0,0,0,0,0
+54,Cherry Rum,1,0,0,0,0,0
+55,Cuba Libre,0,0,0,0,0,1
+56,Corn n Oil,0,1,1,0,0,0
+57,Citrus Coke,0,1,0,0,0,0
+58,Casa Blanca,1,0,0,0,0,0
+59,Clover Club,1,0,0,0,0,0
+60,Caipirissima,0,0,0,0,0,0
+61,Campari Beer,0,0,0,0,0,0
+62,Chicago Fizz,1,1,0,0,0,0
+63,Cosmopolitan,1,0,0,0,0,0
+64,Coffee-Vodka,1,1,0,0,0,0
+65,Casino Royale,1,0,0,0,0,0
+66,Chocolate Milk,0,0,0,0,0,0
+67,Clove Cocktail,0,1,0,0,0,0
+68,Coffee Liqueur,0,0,0,0,0,0
+69,Coke and Drops,0,0,0,0,0,0
+70,Chocolate Drink,0,0,0,0,0,0
+71,Cranberry Punch,0,1,0,0,0,0
+72,Derby,0,1,0,0,0,0
+73,Diesel,0,0,0,0,0,0
+74,Daiquiri,1,0,0,0,0,0
+75,Danbooka,0,0,0,0,0,0
+76,Dragonfly,0,1,0,0,0,0
+77,Dry Martini,0,1,0,0,0,0
+78,Dry Rob Roy,0,1,0,0,0,0
+79,Dirty Martini,1,0,0,0,0,0
+80,Darkwood Sling,0,0,0,0,0,0
+81,Dark and Stormy,0,0,0,0,0,0
+82,Duchamp's Punch,1,0,0,0,0,0
+83,Damned if you do,0,0,0,0,0,0
+84,Dubonnet Cocktail,0,1,0,0,0,0
+85,Drinking Chocolate,0,0,0,0,0,0
+86,Egg Cream,0,0,0,0,0,0
+87,Egg Nog #4,0,1,0,0,1,0
+88,Espresso Martini,1,0,0,0,0,0
+89,Espresso Rumtini,0,0,0,0,0,0
+90,Egg Nog - Healthy,0,0,0,0,0,0
+91,English Rose Cocktail,1,0,0,0,0,0
+92,Egg-Nog - Classic Cooked,0,1,0,0,0,0
+93,Empellón Cocina's Fat-Washed Mezcal,1,1,0,0,0,0
+94,Frosé,1,1,0,1,1,0
+95,Frappé,0,0,0,0,1,0
+96,Foxy Lady,1,0,0,0,0,0
+97,French 75,1,1,0,0,0,0
+98,Figgy Thyme,1,0,0,0,0,0
+99,Frisco Sour,1,0,0,0,0,0
+100,Fruit Shake,0,0,0,0,1,0
+101,Fruit Cooler,0,0,0,0,0,0
+102,Freddy Kruger,0,0,0,0,0,0
+103,Funk and Soul,0,0,0,0,0,0
+104,Fuzzy Asshole,0,1,0,0,0,0
+105,French Martini,1,0,0,0,0,0
+106,French Negroni,1,1,0,0,0,0
+107,Fahrenheit 5000,0,0,0,0,0,0
+108,Flying Dutchman,0,1,0,0,0,0
+109,Frozen Daiquiri,0,0,0,0,1,0
+110,Fruit Flip-Flop,0,0,0,0,1,0
+111,Flying Scotchman,1,0,0,0,0,0
+112,French Connection,0,1,0,0,0,0
+113,Flaming Dr. Pepper,0,0,0,0,0,0
+114,Flaming Lamborghini,0,0,0,0,0,0
+115,Flander's Flake-Out,0,0,0,0,0,0
+116,Frozen Mint Daiquiri,0,0,0,0,1,0
+117,Frozen Pineapple Daiquiri,0,0,0,0,1,0
+118,GG,0,0,0,0,0,0
+119,Gimlet,1,0,0,0,0,0
+120,Godchild,1,0,0,0,0,0
+121,Gin Fizz,1,0,0,0,0,0
+122,Gin Sour,1,0,0,0,0,0
+123,Gagliardo,1,0,0,0,0,0
+124,Godmother,0,0,0,0,0,0
+125,Godfather,0,1,0,0,0,0
+126,Gluehwein,0,0,0,0,0,0
+127,Gin Tonic,0,0,0,0,0,0
+128,Gin Toddy,0,1,0,0,0,0
+129,Gin Smash,0,1,0,0,0,0
+130,Gin Daisy,1,0,0,0,0,0
+131,Gin Lemon,1,0,0,0,0,0
+132,Gin Sling,0,1,0,0,0,0
+133,Greyhound,0,1,0,0,0,0
+134,Gin Rickey,0,0,0,0,0,0
+135,Gin Squirt,0,1,0,0,0,0
+136,Grand Blue,0,0,0,0,0,0
+137,Gin Cooler,0,1,0,0,0,0
+138,Gin Swizzle,1,1,0,1,0,0
+139,Grass Skirt,1,0,0,0,0,0
+140,Grasshopper,1,0,0,0,0,0
+141,Grim Reaper,0,0,0,0,0,0
+142,Gin and Soda,0,1,0,0,0,0
+143,H.D.,0,0,0,0,0,0
+144,Honey Bee,1,0,0,0,0,0
+145,Hot Toddy,0,0,0,0,0,0
+146,Herbal flame,0,1,0,0,0,0
+147,Happy Skipper,0,0,0,0,0,0
+148,Hunter's Moon,1,0,0,0,0,0
+149,Halloween Punch,0,0,0,0,0,0
+150,Havana Cocktail,1,0,0,0,0,0
+151,Homemade Kahlua,0,0,0,0,0,0
+152,Hot Creamy Bush,0,0,0,0,0,0
+153,Harvey Wallbanger,0,1,1,0,0,0
+154,Hawaiian Cocktail,1,0,0,0,0,0
+155,Hemingway Special,1,0,0,0,0,0
+156,Highland Fling Cocktail,0,1,0,0,0,0
+157,Hot Chocolate to Die for,0,1,0,0,0,0
+158,Ipamena,1,1,0,0,0,0
+159,Ice Pick,0,1,0,0,0,0
+160,Iced Coffee,1,0,0,0,1,0
+161,Irish Cream,0,0,0,0,0,0
+162,Irish Coffee,0,0,0,0,0,0
+163,Irish Spring,0,0,0,0,0,0
+164,Imperial Fizz,1,1,0,0,0,0
+165,Irish Russian,0,0,0,0,0,0
+166,Imperial Cocktail,1,0,0,0,0,0
+167,Iced Coffee Fillip,0,0,0,0,0,0
+168,Irish Curdling Cow,0,0,0,0,0,0
+169,Jam Donut,0,0,0,0,0,0
+170,Jitterbug,0,0,0,0,0,0
+171,Jackhammer,0,0,0,0,0,0
+172,Jelly Bean,0,0,0,0,0,0
+173,Jello shots,0,0,0,0,0,0
+174,Jamaica Kiss,0,0,0,0,1,0
+175,John Collins,0,1,0,0,0,0
+176,Japanese Fizz,1,1,0,0,0,0
+177,Jamaican Coffee,0,1,0,0,0,0
+178,Just a Moonmint,0,0,0,0,1,0
+179,Jewel Of The Nile,0,1,0,0,0,0
+180,Jack Rose Cocktail,1,0,0,0,0,0
+181,Jack's Vanilla Coke,0,1,0,0,0,0
+182,Kir,0,0,0,0,0,0
+183,Karsk,0,0,0,0,0,0
+184,Kamikaze,1,0,0,0,0,0
+185,Kir Royale,0,0,0,0,0,0
+186,Kiwi Lemon,0,1,0,0,0,0
+187,Kurant Tea,0,0,0,0,0,0
+188,Kiwi Martini,1,0,1,0,0,0
+189,Kiss me Quick,0,0,0,0,0,0
+190,Kool-Aid Shot,0,1,0,0,0,0
+191,Kool First Aid,0,0,0,0,0,0
+192,Kentucky B And B,0,0,0,0,0,0
+193,Kentucky Colonel,1,0,0,0,0,0
+194,Kool-Aid Slammer,0,0,0,0,0,0
+195,Kiwi Papaya Smoothie,0,0,0,0,1,0
+196,Kill the cold Smoothie,0,0,0,0,0,0
+197,Limeade,0,1,0,0,0,0
+198,Lunch Box,0,0,0,0,0,0
+199,Lemon Drop,1,0,0,0,0,0
+200,Lemon Shot,0,0,0,0,0,0
+201,Long vodka,1,1,0,0,0,0
+202,Lassi Khara,0,0,0,0,1,0
+203,Lassi Raita,0,0,0,0,1,0
+204,Lemouroudji,0,0,0,0,0,0
+205,Loch Lomond,0,1,0,0,0,0
+206,London Town,0,1,0,0,0,0
+207,Lassi - Mango,0,0,0,0,1,0
+208,Lassi - Sweet,0,0,0,0,1,0
+209,Limona Corona,0,0,0,0,0,0
+210,Lord And Lady,0,1,0,0,0,0
+211,Lady Love Fizz,1,1,0,0,0,0
+212,Lone Tree Cocktail,0,1,0,0,0,0
+213,Lazy Coconut Paloma,0,0,0,0,0,0
+214,Lemon Elderflower Spritzer,0,1,0,0,0,0
+215,Lassi - A South Indian Drink,0,0,0,0,1,0
+216,Mojito,0,0,0,0,0,0
+217,Mai Tai,1,0,0,0,0,0
+218,Martini,0,1,0,0,0,0
+219,Michelada,0,0,0,0,0,0
+220,Manhattan,0,1,0,0,0,0
+221,Mint Julep,0,1,0,1,0,0
+222,Mudslinger,0,1,0,0,0,0
+223,Martinez 2,0,1,0,0,0,0
+224,Miami Vice,0,0,0,1,0,0
+225,Moscow Mule,0,1,0,0,0,0
+226,Masala Chai,0,0,0,0,0,0
+227,Munich Mule,0,0,0,0,0,0
+228,Mocha-Berry,0,0,0,0,0,0
+229,Mango Mojito,0,1,0,0,1,0
+230,Mojito Extra,0,0,0,0,0,0
+231,Monkey Gland,1,0,0,0,0,0
+232,Midnight Mint,1,0,0,0,0,0
+233,Mary Pickford,1,0,0,0,0,0
+234,Monkey Wrench,0,1,0,0,0,0
+235,Mother's Milk,1,0,0,0,0,0
+236,Negroni,0,1,0,0,0,0
+237,Nutty Irishman,0,0,0,0,0,0
+238,National Aquarium,1,0,0,0,0,0
+239,New York Lemonade,0,1,0,0,0,0
+240,Nuked Hot Chocolate,0,1,0,0,0,0
+241,Orgasm,1,0,0,0,0,0
+242,Old Pal,0,1,0,0,0,0
+243,Orangeade,0,1,0,0,0,0
+244,Orange Crush,0,0,0,0,0,0
+245,Orange Oasis,1,1,0,0,0,0
+246,Old Fashioned,0,0,0,0,0,0
+247,Oreo Mudslide,0,0,0,1,1,0
+248,Oatmeal Cookie,0,0,0,0,0,0
+249,Orange Push-up,0,0,0,0,1,0
+250,Orange Rosemary Collins,0,0,0,0,0,0
+251,Owen's Grandmother's Revenge,0,0,0,0,1,0
+252,Paradise,1,0,0,0,0,0
+253,Pink Gin,1,0,0,0,0,0
+254,Pegu Club,1,0,0,0,0,0
+255,Pink Lady,1,0,0,0,0,0
+256,Pink Moon,1,0,0,0,0,0
+257,Penicillin,1,0,1,0,1,0
+258,Pisco Sour,1,0,0,0,0,0
+259,Pina Colada,0,0,0,0,1,0
+260,Pink Penocha,0,1,0,0,0,0
+261,Pure Passion,0,1,0,0,0,0
+262,Popped cherry,0,0,0,0,0,0
+263,Poppy Cocktail,1,0,0,0,0,0
+264,Port Wine Flip,1,0,0,0,0,0
+265,Planter's Punch,1,0,0,0,0,0
+266,Pornstar Martini,1,0,0,0,0,0
+267,Planter?�s Punch,1,0,0,0,0,0
+268,Port And Starboard,0,0,1,0,0,0
+269,Pysch Vitamin Light,1,0,0,0,0,0
+270,Pink Panty Pulldowns,1,0,0,0,0,0
+271,Passion Fruit Martini,0,1,0,0,0,0
+272,Pineapple Gingerale Smoothie,0,0,0,0,1,0
+273,Quentin,1,0,0,0,0,0
+274,Queen Bee,1,0,0,0,0,0
+275,Quick F**K,0,0,0,0,0,0
+276,Quick-sand,0,0,0,0,0,0
+277,Queen Charlotte,0,1,0,0,0,0
+278,Queen Elizabeth,0,1,0,0,0,0
+279,Quarter Deck Cocktail,0,1,0,0,0,0
+280,Rose,1,0,0,0,0,0
+281,Radler,0,0,0,0,0,0
+282,Rum Sour,1,0,0,0,0,0
+283,Rum Punch,0,0,0,0,0,0
+284,Rum Toddy,0,1,0,0,0,0
+285,Royal Fizz,1,0,0,0,0,0
+286,Rum Cooler,0,1,0,0,0,0
+287,Rum Runner,0,0,0,0,0,0
+288,Rusty Nail,0,1,0,0,0,0
+289,Red Snapper,1,0,0,0,0,0
+290,Royal Bitch,0,0,0,0,0,0
+291,Royal Flush,0,0,0,0,0,0
+292,Rum Cobbler,0,1,0,0,0,0
+293,Ruby Tuesday,0,1,0,0,0,0
+294,Rail Splitter,0,0,0,0,0,0
+295,Rosemary Blue,0,0,0,0,0,0
+296,Ramos Gin Fizz,1,0,0,0,0,0
+297,Royal Gin Fizz,1,1,0,0,0,0
+298,Rum Milk Punch,1,0,0,0,0,0
+299,Raspberry Julep,0,1,0,0,0,0
+300,Rum Screwdriver,0,1,0,0,0,0
+301,Raspberry Cooler,0,1,0,0,0,0
+302,Rum Old-fashioned,0,1,1,0,0,0
+303,Russian Spring Punch,0,0,0,0,0,0
+304,Smut,0,0,0,0,0,0
+305,Spritz,0,0,0,0,0,1
+306,Sangria,0,0,0,0,0,0
+307,Sazerac,0,1,0,0,0,0
+308,Sidecar,1,0,0,0,0,0
+309,Spice 75,1,0,0,0,0,0
+310,Shot-gun,0,0,1,0,0,0
+311,Salty Dog,0,1,0,0,0,0
+312,Stone Sour,1,0,0,0,0,0
+313,Sea breeze,0,0,0,0,0,1
+314,Scotch Sour,1,0,0,0,0,0
+315,Sweet Tooth,0,0,0,0,0,0
+316,Screwdriver,0,0,0,0,0,0
+317,Sherry Flip,1,0,0,0,0,0
+318,Shark Attack,0,0,0,0,0,0
+319,San Francisco,0,0,0,0,0,0
+320,Space Odyssey,0,0,0,0,0,0
+321,Sherry Eggnog,1,1,0,0,0,0
+322,Sweet Bananas,0,0,0,0,1,0
+323,Sweet Sangria,0,0,0,0,0,0
+324,Thriller,1,0,0,0,0,0
+325,The Galah,0,0,0,0,0,0
+326,Tia-Maria,0,0,0,0,0,0
+327,Tipperary,0,1,0,0,0,0
+328,Turkeyball,1,0,0,0,0,0
+329,Texas Sling,0,0,0,0,1,0
+330,Thai Coffee,0,0,1,0,0,0
+331,Tom Collins,1,1,0,0,0,0
+332,Tomato Tang,0,0,0,0,1,0
+333,Talos Coffee,0,0,0,0,0,0
+334,Tennesee Mud,0,0,0,0,0,0
+335,Thai Iced Tea,0,1,0,0,1,0
+336,The Last Word,1,0,0,0,0,0
+337,Turf Cocktail,0,1,0,0,0,0
+338,The Laverstoke,0,1,0,0,0,0
+339,The Philosopher,1,0,0,0,0,0
+340,Tuxedo Cocktail,0,1,0,0,0,0
+341,The Jimmy Conway,0,0,0,0,0,0
+342,Texas Rattlesnake,1,0,0,0,0,0
+343,Vesper,1,0,0,0,0,0
+344,Vesuvio,1,0,0,0,0,0
+345,Veteran,0,1,0,0,0,0
+346,Van Vleet,1,0,0,0,0,0
+347,Vodka Fizz,0,0,0,0,1,0
+348,Vodka Lemon,0,0,0,0,0,0
+349,Vodka Slime,0,0,0,0,0,0
+350,Vodka Tonic,0,0,0,0,0,0
+351,Vodka Martini,1,0,0,0,0,0
+352,Vodka Russian,0,0,0,0,0,0
+353,Vermouth Cassis,0,1,0,0,0,0
+354,Victory Collins,1,0,0,0,0,0
+355,Vodka And Tonic,0,1,0,0,0,0
+356,Valencia Cocktail,1,0,0,0,0,0
+357,Whisky Mac,0,0,0,0,0,0
+358,White Lady,1,0,0,0,0,0
+359,Wine Punch,0,0,0,0,0,0
+360,Wine Cooler,0,0,0,0,0,0
+361,Whiskey Sour,1,0,0,0,0,0
+362,White Russian,0,0,0,0,0,0
+363,White Wine Sangria,0,0,0,0,0,0
+364,Waikiki Beachcomber,1,0,0,0,0,0
+365,Yellow Bird,1,0,0,0,0,0
+366,Yoghurt Cooler,0,0,0,0,1,0
+367,Zorro,0,0,0,0,0,0
+368,Zinger,0,0,0,0,0,0
+369,Zombie,0,1,0,0,1,0
+370,Zambeer,0,1,0,0,0,0
+371,Zorbatini,0,0,0,0,0,0
+372,Zenmeister,0,0,0,0,0,0
+373,Zipperhead,0,0,0,0,0,0
+374,Zima Blaster,0,0,0,0,0,0
+375,Zizi Coin-coin,0,1,0,0,0,0
+376,Zimadori Zinger,0,1,0,0,0,0
+377,Zippy's Revenge,1,0,0,0,0,0
+378,Ziemes Martini Apfelsaft,0,0,0,0,0,0
+379,155 Belmont,0,0,0,0,1,0
+380,1-900-FUK-MEUP,1,0,0,0,0,0
+381,151 Florida Bushwacker,0,0,0,0,1,0
+382,252,0,0,0,0,0,0
+383,24k nightmare,1,0,0,0,0,0
+384,3 Wise Men,0,0,0,0,0,0
+385,410 Gone,0,0,0,0,0,0
+386,50/50,0,0,0,0,0,0
+387,57 Chevy with a White License Plate,0,1,0,0,0,0
+388,69 Special,0,0,0,0,0,0
+389,747,0,0,0,0,0,0
+390,747 Drink,0,0,0,0,0,0
+391,9 1/2 Weeks,0,0,0,0,0,0

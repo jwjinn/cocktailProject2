@@ -1,0 +1,392 @@
+index,name,Glass
+1,A1,Cocktail glass
+2,ABC,Shot glass
+3,Ace,Martini Glass
+4,ACID,Shot glass
+5,Adam,Cocktail glass
+6,AT&T,Highball Glass
+7,A. J.,Cocktail glass
+8,Affair,Highball glass
+9,Apello,Collins Glass
+10,Avalon,Highball glass
+11,Abilene,Highball glass
+12,Addison,Martini Glass
+13,Almeria,Cocktail glass
+14,Acapulco,Old-fashioned glass
+15,Affinity,Cocktail glass
+16,Applecar,Cocktail glass
+17,Aviation,Cocktail glass
+18,Addington,Cocktail glass
+19,After sex,Highball glass
+20,Afterglow,Highball Glass
+21,Afternoon,Collins Glass
+22,Alexander,Cocktail glass
+23,Algonquin,Cocktail glass
+24,Allegheny,Cocktail glass
+25,B-52,Shot glass
+26,B-53,Collins Glass
+27,Bijou,Cocktail glass
+28,Boxcar,Whiskey sour glass
+29,Big Red,Shot glass
+30,Bellini,Champagne Flute
+31,Bramble,Old-Fashioned glass
+32,Balmoral,Cocktail glass
+33,Bluebird,Cocktail glass
+34,Brooklyn,Cocktail glass
+35,Bora Bora,Highball glass
+36,Boomerang,Cocktail glass
+37,Barracuda,Margarita glass
+38,Brigadier,Coupe Glass
+39,Broadside,Highball glass
+40,Buccaneer,Beer pilsner
+41,Brain Fart,Punch bowl
+42,Blackthorn,Cocktail glass
+43,Bob Marley,Shot glass
+44,Bible Belt,Highball glass
+45,Bubble Gum,Shot glass
+46,Bumble Bee,Shot glass
+47,Baby Eskimo,Collins Glass
+48,Boston Sour,Whiskey sour glass
+49,Bahama Mama,Highball glass
+50,Casino,Cocktail glass
+51,Cafe Savoy,Coffee mug
+52,Cream Soda,Highball glass
+53,Cuba Libra,Highball glass
+54,Cherry Rum,Cocktail glass
+55,Cuba Libre,Highball glass
+56,Corn n Oil,Old-fashioned glass
+57,Citrus Coke,Highball Glass
+58,Casa Blanca,Cocktail glass
+59,Clover Club,Cocktail glass
+60,Caipirissima,Collins Glass
+61,Campari Beer,Beer mug
+62,Chicago Fizz,Highball glass
+63,Cosmopolitan,Cocktail glass
+64,Coffee-Vodka,Collins Glass
+65,Casino Royale,Whiskey sour glass
+66,Chocolate Milk,Shot Glass
+67,Clove Cocktail,Cocktail glass
+68,Coffee Liqueur,Collins Glass
+69,Coke and Drops,Cocktail glass
+70,Chocolate Drink,Coffee mug
+71,Cranberry Punch,Punch Bowl
+72,Derby,Cocktail glass
+73,Diesel,Pint glass
+74,Daiquiri,Cocktail glass
+75,Danbooka,Coffee Mug
+76,Dragonfly,Highball glass
+77,Dry Martini,Cocktail glass
+78,Dry Rob Roy,Cocktail glass
+79,Dirty Martini,Cocktail glass
+80,Darkwood Sling,Cocktail glass
+81,Dark and Stormy,Highball glass
+82,Duchamp's Punch,Old-fashioned glass
+83,Damned if you do,Shot glass
+84,Dubonnet Cocktail,Cocktail glass
+85,Drinking Chocolate,Coffee mug
+86,Egg Cream,Coffee mug
+87,Egg Nog #4,Punch bowl
+88,Espresso Martini,Cocktail glass
+89,Espresso Rumtini,Cocktail glass
+90,Egg Nog - Healthy,Collins Glass
+91,English Rose Cocktail,Cocktail glass
+92,Egg-Nog - Classic Cooked,Pitcher
+93,Empellón Cocina's Fat-Washed Mezcal,Beer Glass
+94,Frosé,Cocktail glass
+95,Frappé,Highball Glass
+96,Foxy Lady,Cocktail glass
+97,French 75,Collins glass
+98,Figgy Thyme,Highball glass
+99,Frisco Sour,Whiskey sour glass
+100,Fruit Shake,Highball Glass
+101,Fruit Cooler,Highball Glass
+102,Freddy Kruger,Shot glass
+103,Funk and Soul,Collins glass
+104,Fuzzy Asshole,Coffee mug
+105,French Martini,Cocktail glass
+106,French Negroni,Martini Glass
+107,Fahrenheit 5000,Shot glass
+108,Flying Dutchman,Old-fashioned glass
+109,Frozen Daiquiri,Champagne flute
+110,Fruit Flip-Flop,Highball Glass
+111,Flying Scotchman,Cocktail glass
+112,French Connection,Old-fashioned glass
+113,Flaming Dr. Pepper,Collins Glass
+114,Flaming Lamborghini,Cocktail glass
+115,Flander's Flake-Out,Collins Glass
+116,Frozen Mint Daiquiri,Old-fashioned glass
+117,Frozen Pineapple Daiquiri,Cocktail Glass
+118,GG,Collins Glass
+119,Gimlet,Martini Glass
+120,Godchild,Champagne flute
+121,Gin Fizz,Highball glass
+122,Gin Sour,Whiskey sour glass
+123,Gagliardo,Cocktail glass
+124,Godmother,Old-fashioned glass
+125,Godfather,Old-fashioned glass
+126,Gluehwein,Irish coffee cup
+127,Gin Tonic,Highball glass
+128,Gin Toddy,Old-fashioned glass
+129,Gin Smash,Old-fashioned glass
+130,Gin Daisy,Old-fashioned glass
+131,Gin Lemon,Highball glass
+132,Gin Sling,Old-fashioned glass
+133,Greyhound,Collins glass
+134,Gin Rickey,Highball glass
+135,Gin Squirt,Highball glass
+136,Grand Blue,Old-fashioned glass
+137,Gin Cooler,Collins glass
+138,Gin Swizzle,Highball glass
+139,Grass Skirt,Old-fashioned glass
+140,Grasshopper,Cocktail glass
+141,Grim Reaper,Old-fashioned glass
+142,Gin and Soda,Highball glass
+143,H.D.,Beer mug
+144,Honey Bee,Margarita glass
+145,Hot Toddy,Irish coffee cup
+146,Herbal flame,Mason jar
+147,Happy Skipper,Highball glass
+148,Hunter's Moon,Balloon Glass
+149,Halloween Punch,Punch bowl
+150,Havana Cocktail,Cocktail glass
+151,Homemade Kahlua,Collins Glass
+152,Hot Creamy Bush,Irish coffee cup
+153,Harvey Wallbanger,Collins glass
+154,Hawaiian Cocktail,Cocktail glass
+155,Hemingway Special,Cocktail glass
+156,Highland Fling Cocktail,Cocktail glass
+157,Hot Chocolate to Die for,Coffee mug
+158,Ipamena,Wine Glass
+159,Ice Pick,Collins Glass
+160,Iced Coffee,Coffee mug
+161,Irish Cream,Irish coffee cup
+162,Irish Coffee,Irish coffee cup
+163,Irish Spring,Collins glass
+164,Imperial Fizz,Highball glass
+165,Irish Russian,Highball glass
+166,Imperial Cocktail,Cocktail glass
+167,Iced Coffee Fillip,Coffee mug
+168,Irish Curdling Cow,Highball glass
+169,Jam Donut,Shot glass
+170,Jitterbug,Cocktail Glass
+171,Jackhammer,Collins Glass
+172,Jelly Bean,Cordial glass
+173,Jello shots,Shot glass
+174,Jamaica Kiss,Hurricane glass
+175,John Collins,Collins glass
+176,Japanese Fizz,Highball glass
+177,Jamaican Coffee,Champagne flute
+178,Just a Moonmint,Highball Glass
+179,Jewel Of The Nile,Cocktail glass
+180,Jack Rose Cocktail,Cocktail glass
+181,Jack's Vanilla Coke,Old-fashioned glass
+182,Kir,Wine Glass
+183,Karsk,Highball glass
+184,Kamikaze,Cocktail glass
+185,Kir Royale,Champagne Flute
+186,Kiwi Lemon,Highball glass
+187,Kurant Tea,Champagne flute
+188,Kiwi Martini,Cocktail glass
+189,Kiss me Quick,Highball glass
+190,Kool-Aid Shot,Old-fashioned glass
+191,Kool First Aid,Shot glass
+192,Kentucky B And B,Brandy snifter
+193,Kentucky Colonel,Cocktail glass
+194,Kool-Aid Slammer,Shot glass
+195,Kiwi Papaya Smoothie,Highball Glass
+196,Kill the cold Smoothie,Highball glass
+197,Limeade,Highball glass
+198,Lunch Box,Pint glass
+199,Lemon Drop,Cocktail glass
+200,Lemon Shot,Shot glass
+201,Long vodka,Highball glass
+202,Lassi Khara,Highball Glass
+203,Lassi Raita,Highball Glass
+204,Lemouroudji,Highball Glass
+205,Loch Lomond,Cocktail glass
+206,London Town,Cocktail glass
+207,Lassi - Mango,Highball glass
+208,Lassi - Sweet,Highball glass
+209,Limona Corona,Beer Glass
+210,Lord And Lady,Old-fashioned glass
+211,Lady Love Fizz,Cocktail glass
+212,Lone Tree Cocktail,Cocktail glass
+213,Lazy Coconut Paloma,Highball glass
+214,Lemon Elderflower Spritzer,Highball glass
+215,Lassi - A South Indian Drink,Highball Glass
+216,Mojito,Highball glass
+217,Mai Tai,Collins glass
+218,Martini,Cocktail glass
+219,Michelada,Pint glass
+220,Manhattan,Cocktail glass
+221,Mint Julep,Collins glass
+222,Mudslinger,Punch bowl
+223,Martinez 2,Cocktail glass
+224,Miami Vice,Cocktail glass
+225,Moscow Mule,Copper Mug
+226,Masala Chai,Coffee Mug
+227,Munich Mule,Highball glass
+228,Mocha-Berry,Irish coffee cup
+229,Mango Mojito,Jar
+230,Mojito Extra,Collins glass
+231,Monkey Gland,Cocktail glass
+232,Midnight Mint,Cocktail glass
+233,Mary Pickford,Cocktail glass
+234,Monkey Wrench,Old-fashioned glass
+235,Mother's Milk,Shot glass
+236,Negroni,Old-fashioned glass
+237,Nutty Irishman,Highball Glass
+238,National Aquarium,Collins Glass
+239,New York Lemonade,Cocktail glass
+240,Nuked Hot Chocolate,Coffee mug
+241,Orgasm,Cocktail glass
+242,Old Pal,Nick and Nora Glass
+243,Orangeade,Highball glass
+244,Orange Crush,Shot glass
+245,Orange Oasis,Highball glass
+246,Old Fashioned,Old-fashioned glass
+247,Oreo Mudslide,Collins Glass
+248,Oatmeal Cookie,Mason jar
+249,Orange Push-up,Hurricane glass
+250,Orange Rosemary Collins,Highball glass
+251,Owen's Grandmother's Revenge,Highball glass
+252,Paradise,Cocktail glass
+253,Pink Gin,White wine glass
+254,Pegu Club,Cocktail glass
+255,Pink Lady,Cocktail glass
+256,Pink Moon,Whiskey Glass
+257,Penicillin,Old-fashioned glass
+258,Pisco Sour,Cocktail glass
+259,Pina Colada,Collins glass
+260,Pink Penocha,Punch bowl
+261,Pure Passion,Whiskey sour glass
+262,Popped cherry,Highball glass
+263,Poppy Cocktail,Cocktail glass
+264,Port Wine Flip,Whiskey sour glass
+265,Planter's Punch,Collins glass
+266,Pornstar Martini,Cocktail glass
+267,Planter?�s Punch,Highball glass
+268,Port And Starboard,Pousse cafe glass
+269,Pysch Vitamin Light,Collins Glass
+270,Pink Panty Pulldowns,Collins Glass
+271,Passion Fruit Martini,Cocktail glass
+272,Pineapple Gingerale Smoothie,Highball Glass
+273,Quentin,Cocktail glass
+274,Queen Bee,Cocktail glass
+275,Quick F**K,Shot glass
+276,Quick-sand,Highball glass
+277,Queen Charlotte,Collins glass
+278,Queen Elizabeth,Cocktail glass
+279,Quarter Deck Cocktail,Cocktail glass
+280,Rose,Cocktail glass
+281,Radler,Highball glass
+282,Rum Sour,Whiskey sour glass
+283,Rum Punch,Punch bowl
+284,Rum Toddy,Old-fashioned glass
+285,Royal Fizz,Collins glass
+286,Rum Cooler,Collins glass
+287,Rum Runner,Cocktail glass
+288,Rusty Nail,Old-fashioned glass
+289,Red Snapper,Old-fashioned glass
+290,Royal Bitch,Shot glass
+291,Royal Flush,Old-fashioned glass
+292,Rum Cobbler,Old-fashioned glass
+293,Ruby Tuesday,Highball glass
+294,Rail Splitter,Highball glass
+295,Rosemary Blue,Balloon Glass
+296,Ramos Gin Fizz,Highball glass
+297,Royal Gin Fizz,Highball glass
+298,Rum Milk Punch,Collins glass
+299,Raspberry Julep,Cordial glass
+300,Rum Screwdriver,Highball glass
+301,Raspberry Cooler,Highball glass
+302,Rum Old-fashioned,Old-fashioned glass
+303,Russian Spring Punch,Highball glass
+304,Smut,Beer mug
+305,Spritz,Old-Fashioned glass
+306,Sangria,Pitcher
+307,Sazerac,Old-fashioned glass
+308,Sidecar,Cocktail glass
+309,Spice 75,Wine Glass
+310,Shot-gun,Shot glass
+311,Salty Dog,Highball glass
+312,Stone Sour,Whiskey sour glass
+313,Sea breeze,Highball glass
+314,Scotch Sour,Whiskey sour glass
+315,Sweet Tooth,Highball Glass
+316,Screwdriver,Highball glass
+317,Sherry Flip,Nick and Nora Glass
+318,Shark Attack,Pitcher
+319,San Francisco,Highball glass
+320,Space Odyssey,Highball glass
+321,Sherry Eggnog,Collins glass
+322,Sweet Bananas,Highball Glass
+323,Sweet Sangria,Pitcher
+324,Thriller,Cocktail glass
+325,The Galah,Collins glass
+326,Tia-Maria,Collins Glass
+327,Tipperary,Nick and Nora Glass
+328,Turkeyball,Shot glass
+329,Texas Sling,Wine Glass
+330,Thai Coffee,Highball glass
+331,Tom Collins,Collins glass
+332,Tomato Tang,Highball glass
+333,Talos Coffee,Brandy snifter
+334,Tennesee Mud,Coffee Mug
+335,Thai Iced Tea,Highball glass
+336,The Last Word,Cocktail glass
+337,Turf Cocktail,Cocktail glass
+338,The Laverstoke,Balloon Glass
+339,The Philosopher,Margarita glass
+340,Tuxedo Cocktail,Cocktail glass
+341,The Jimmy Conway,Whiskey sour glass
+342,Texas Rattlesnake,Highball glass
+343,Vesper,Cocktail glass
+344,Vesuvio,Old-fashioned glass
+345,Veteran,Old-fashioned glass
+346,Van Vleet,Old-fashioned glass
+347,Vodka Fizz,White wine glass
+348,Vodka Lemon,Highball glass
+349,Vodka Slime,Highball glass
+350,Vodka Tonic,Highball glass
+351,Vodka Martini,Cocktail glass
+352,Vodka Russian,Collins Glass
+353,Vermouth Cassis,Highball glass
+354,Victory Collins,Collins glass
+355,Vodka And Tonic,Highball glass
+356,Valencia Cocktail,Cocktail glass
+357,Whisky Mac,Collins Glass
+358,White Lady,Cocktail glass
+359,Wine Punch,Collins Glass
+360,Wine Cooler,Collins Glass
+361,Whiskey Sour,Old-fashioned glass
+362,White Russian,Old-fashioned glass
+363,White Wine Sangria,Pitcher
+364,Waikiki Beachcomber,Cocktail glass
+365,Yellow Bird,Cocktail glass
+366,Yoghurt Cooler,Highball Glass
+367,Zorro,Coffee Mug
+368,Zinger,Highball glass
+369,Zombie,Hurricane glass
+370,Zambeer,Collins Glass
+371,Zorbatini,Cocktail glass
+372,Zenmeister,Collins Glass
+373,Zipperhead,Whiskey sour glass
+374,Zima Blaster,Hurricane glass
+375,Zizi Coin-coin,Margarita/Coupette glass
+376,Zimadori Zinger,Collins glass
+377,Zippy's Revenge,Old-fashioned glass
+378,Ziemes Martini Apfelsaft,Collins Glass
+379,155 Belmont,White wine glass
+380,1-900-FUK-MEUP,Old-fashioned glass
+381,151 Florida Bushwacker,Beer mug
+382,252,Shot glass
+383,24k nightmare,Shot glass
+384,3 Wise Men,Collins glass
+385,410 Gone,Collins Glass
+386,50/50,Collins Glass
+387,57 Chevy with a White License Plate,Highball glass
+388,69 Special,Collins Glass
+389,747,Shot glass
+390,747 Drink,Highball glass
+391,9 1/2 Weeks,Cocktail glass

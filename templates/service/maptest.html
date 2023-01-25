@@ -1,0 +1,228 @@
+{%load static %}
+
+
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>map</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wqnzx0j1eq&amp;submodules=geocoder"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+
+            var range;
+            var year;
+
+    function callGeoInfo(cord){
+        console.log(typeof(cord));
+        console.log("비동기 통신전: " + cord);
+
+        documentRange = document.querySelector('input[name = "range"]').value;
+        documentYear = document.querySelector('input[name = "year"]').value;
+
+
+        range = documentRange
+        year = documentYear
+
+        if (!Number(range)){
+            console.log("숫자가 아니다.")
+            window.alert("조회할 거리를 입력하세요.")
+            return
+        } else {
+            console.log("범위 정상입력.")
+        }
+
+
+        if (!Number(year)){
+            console.log("숫자가 아니다.")
+            window.alert("조회할 연도를 입력하세요.")
+            return
+        }
+        else
+        {
+            if(year<2014 | year >=2023){
+                console.log("조회 범위 아님.")
+                window.alert("2015년과 2022년 사이만 조회가 가능합니다.")
+                return
+            }
+            else{
+                console.log("연도 정상입력.")
+            }
+        }
+
+        console.log("ajax 전 range: " + typeof(range))
+        console.log("ajax 전 year: " + year)
+
+
+
+        $.ajax({
+            url: 'geoInfo',
+            async: false,
+            type: 'GET',
+            data:{
+                'input_val': cord,
+                'year': year,
+                'range': range
+            },
+            success: function (data){
+                result = data
+            },
+            fail: function (data){
+                result = null
+            }
+        });
+
+
+
+    }
+
+        </script>
+
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1>수도권 신설 학교를 위한 학생수 예측 데이터 셋</h1>
+
+
+				</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div id="content">
+
+							<!-- Content -->
+
+								<article>
+									<header>
+										<h2>지정한 범위 있는 시설의 갯수를 보여준다.</h2>
+										<p>논문에서 연구되어진, 교육 환경, 교통 편의성이 표현되었다.</p>
+									</header>
+                                    <div id="map" style="width:100%;height:600px;"></div>
+
+                                    <span>
+                                        반경 몇 미터 조회<input type ="text" name = "range">
+                                        부동산 조회할 연도(2015 ~ 2022)<input type ="text" name = "year">
+
+                                    </span>
+                                    <span>
+                                         해당 연도와 입력한 범위의 부동산 체결이 조회 되지 않은 경우, 거래 금액이 -1 거래 량이 0으로 표현 됩니다.<br>
+                                        서울시 밖 정보를 조회할 경우 값이 업데이트가 되지 않습니다.
+                                    </span>
+
+
+
+
+
+
+									<h3>실행 과정</h3>
+                                    <p>
+                                        1. Script 클릭 감지 <br>
+                                        2. 숫자 입력 및 범위 확인 <br>
+                                        3. mongoDB GeoQuery 전송하여 학원수, 버스정류장 수, 지하철 수, 부동산 거래체결 수 리턴받음. <br>
+                                        4. naver Geocoding을 이용해 좌표의 자치구 정보를 확인<br>
+                                        5. 자치구 정보를 입력한 Mariadb query 전송 <br>
+                                        6. mongoDB GeoQuery 데이터프레임과 Mariadb 데이터프레임과 조인
+                                        7. 입력한 연도, 범위에 계약이 체결된 부동산 평균 금액 리턴.
+
+                                    </p>
+
+
+
+
+								</article>
+
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+            <script src="{% static 'js/browser.min.js' %}"></script>
+            <script src="{% static 'js/breakpoints.min.js' %}"></script>
+            <script src="{% static 'js/util.js' %}"></script>
+            <script src="{% static 'js/main.js' %}"></script>
+
+        <script>
+
+            var map = new naver.maps.Map("map", {
+            center: new naver.maps.LatLng(37.3595316, 127.1052133),
+            zoom: 15,
+            mapTypeControl: true
+            });
+
+
+</script>
+    <script id="code">
+var map = new naver.maps.Map("map", {
+        center: new naver.maps.LatLng(37.5666103, 126.9783882),
+        zoom: 16
+    }),
+    infoWindow = null;
+
+function initGeocoder() {
+    var latlng = map.getCenter();
+    var utmk = naver.maps.TransCoord.fromLatLngToUTMK(latlng); // 위/경도 -> UTMK
+    var tm128 = naver.maps.TransCoord.fromUTMKToTM128(utmk);   // UTMK -> TM128
+    var naverCoord = naver.maps.TransCoord.fromTM128ToNaver(tm128); // TM128 -> NAVER
+
+    infoWindow = new naver.maps.InfoWindow({
+        content: ''
+    });
+
+    map.addListener('click', function(e) {
+        var latlng = e.coord,
+            utmk = naver.maps.TransCoord.fromLatLngToUTMK(latlng),
+            tm128 = naver.maps.TransCoord.fromUTMKToTM128(utmk),
+            naverCoord = naver.maps.TransCoord.fromTM128ToNaver(tm128);
+
+        utmk.x = parseFloat(utmk.x.toFixed(1));
+        utmk.y = parseFloat(utmk.y.toFixed(1));
+
+        callGeoInfo(latlng.toString());
+
+
+
+        infoWindow.setContent([
+            '<div style="padding:10px;width:380px;font-size:14px;line-height:20px;">',
+
+
+            '<strong>학원 수: </strong> : '+result['private']+'<br/>',
+            '<strong>버스 정류장 수(반대편 버스 정류장 포함): </strong> : '+result['bus']+'<br/>',
+            '<strong>학교 수: </strong> : '+result['school']+'<br/>',
+            '<strong>지하철 수: </strong> : '+result['subway']+'<br/>',
+            '<strong>2015년부터 2022년사이 부동산 거래 체결 수: </strong> : '+result['real_estate']+'<br/>',
+            '<strong>입력한 연도별 평균 거래 금액: </strong> : '+result['meanPrice']+'<br/>',
+            '</div>'
+        ].join(''));
+
+        infoWindow.open(map, latlng);
+        console.log('LatLng: ' + latlng.toString());
+        console.log('UTMK: ' + utmk.toString());
+        console.log('TM128: ' + tm128.toString());
+        console.log('NAVER: ' + naverCoord.toString());
+    });
+}
+
+naver.maps.onJSContentLoaded = initGeocoder;
+</script>
+
+	</body>
+</html>
