@@ -3,38 +3,24 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.mainView, name = 'mainView'),
-
+    path("", views.mainView, name="mainView"),
     # clustering url, ajax
-    path('cluster/', views.cluster, name = 'cluster'),
-    path('cluster/ajax', views.clusterAjax, name = 'clusterajax'),
-
-    path('ingredient/', views.ingredient, name = 'ingredient'),
-
-
+    path("cluster/", views.cluster, name="cluster"),
+    path("cluster/ajax", views.clusterAjax, name="clusterajax"),
+    path("ingredient/", views.ingredient, name="ingredient"),
+    path("ingredient/ajax", views.ingredientajax, name="ingredientajax"),
     # image url, ajax, cnn
-    path('image/', views.image, name = 'image'),
-    path('image/ajax', views.imageAjax, name = 'imageAjax'),
-    path('image/cnn', views.cnnModel, name = 'cnnModel'),
-
-    #file Download
-    path('downloadFile/', views.downloadFile, name = 'downloadFile'),
-
-
-
-
-    path('changeImage/', views.changeImage, name = 'changeImage'),
-    path('changeImage/ajax', views.changeImageAjax, name = 'changeImageAjax'),
-
-
-    path('tech/', views.tech, name = 'tech'),
-
-    #barlocation
-    path('barLocation/', views.barLocation, name = 'barLocation'),
-    path('barLocation/geoInfo', views.barLocationInfo, name = 'geoInfo'),
-
-
+    path("image/", views.image, name="image"),
+    path("image/ajax", views.imageAjax, name="imageAjax"),
+    path("image/cnn", views.cnnModel, name="cnnModel"),
+    # file Download
+    path("downloadFile/", views.downloadFile, name="downloadFile"),
+    path("changeImage/", views.changeImage, name="changeImage"),
+    path("changeImage/ajax", views.changeImageAjax, name="changeImageAjax"),
+    path("tech/", views.tech, name="tech"),
+    # barlocation
+    path("barLocation/", views.barLocation, name="barLocation"),
+    path("barLocation/geoInfo", views.barLocationInfo, name="geoInfo"),
     # maptest
-    path('maptest/', views.maptest, name = 'maptest'),
-
+    path("maptest/", views.maptest, name="maptest"),
 ]
