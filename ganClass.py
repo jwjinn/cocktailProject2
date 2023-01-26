@@ -161,7 +161,6 @@ class cover:
         # GAN = torch.load('Gustave2_G_XtoY.pt', map_location=torch.device('cpu'))
         # GAN = torch.load(self.modelLocation, map_location=torch.device('cpu'))
 
-        #TODO 일단 내 컴퓨터 위치로 하드코딩함.
 
 
         GAN = torch.load(os.getcwd()+"/model/Gustave2_G_XtoY.pt", map_location=torch.device('cpu'))
