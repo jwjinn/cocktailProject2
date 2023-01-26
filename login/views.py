@@ -22,8 +22,8 @@ def index(request):
         email = request.POST['email']
         password = request.POST['password']
 
-        print(email)
-        print(password)
+        # print(email)
+        # print(password)
 
 
         login = Userregister.objects.filter(email=email)
@@ -46,6 +46,7 @@ def index(request):
                 python manage.py makemigrations
                 python manage.py migrate
                 
+                아이디 패스워드가 있을 경우에 'service/'로 이동시키고, session을 만든다.
                 """
 
                 return redirect('service/')
@@ -77,6 +78,10 @@ def register(request):
                                 gender=gender, age=age, phone_number=phone_number, hadooplocation=hadoopLocation)
 
         register.save()
+
+        """
+        비밀번호는 해싱해서 DB에 입력한다.
+        """
 
 
         # print(hadoopLocation)

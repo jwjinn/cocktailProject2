@@ -238,6 +238,10 @@ def ingredientajax(request):
 
 
 # 이 칵테일의 이름은?
+
+"""
+이미지 웹사이트 연결
+"""
 def image(request):
     if logInCheck(request):
         print("현재 로그인 이메일 " + request.session["email"])
@@ -248,6 +252,13 @@ def image(request):
 
     # return render(request, 'service/image.html')
 
+"""
+post 방식으로 받은 이미지 처리 코드.
+
+DB에 파일 정보를 입력한다. 2개의 파일 업로드 이력 table을 사용한 이유는 Airflow에서 활용하는 테이블 하나,
+
+순수 업로드 로그 기록용 테이블 하나이기 때문이다.
+"""
 
 @csrf_exempt
 def imageAjax(request):
@@ -323,7 +334,9 @@ def imageAjax(request):
     fs.save(hadoopFileName, img)
     return JsonResponse(context)
 
-
+"""
+이메일 이름으로 된 파일을 다운 받을 수 있도록 한다.
+"""
 def downloadFile(request):
     email = request.session["email"]
 
@@ -341,7 +354,10 @@ def downloadFile(request):
 
 # 칵테일 사진 화풍변경
 
+"""
 
+화풍 변경용 사이트로 연결하는 코드.
+"""
 def changeImage(request):
     if logInCheck(request):
         print("현재 로그인 이메일 " + request.session["email"])
@@ -352,7 +368,10 @@ def changeImage(request):
 
     # return render(request, 'service/changeImage.html')
 
+"""
 
+GAN 모델과 연결하는 코드.
+"""
 @csrf_exempt
 def changeImageAjax(request):
 
@@ -385,7 +404,9 @@ def tech(request):
 
     # return render(request, 'service/tech.html')
 
-
+"""
+사용안함.
+"""
 # 주변 칵테일 바의 위치는?
 def barLocation(request):
     if logInCheck(request):
@@ -397,7 +418,9 @@ def barLocation(request):
 
     # return render(request, 'service/barLocation.html')
 
-
+"""
+사용안함.
+"""
 def barLocationInfo(request):
     input_val = request.GET.get("input_val")
 
@@ -407,7 +430,9 @@ def barLocationInfo(request):
 
     return JsonResponse(context)
 
-
+"""
+사용안함.
+"""
 def maptest(request):
     return render(request, "service/maptest.html")
 
@@ -416,7 +441,9 @@ def maptest(request):
 이미지를 모델에 보내고, 설명까지 리턴하는 곳.
 """
 
-
+"""
+사용안함.
+"""
 @csrf_exempt
 def cnnModel(request):
     print("cnnModel 호출.")
