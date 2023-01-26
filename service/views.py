@@ -104,6 +104,9 @@ def search_django(keyword):
     index = "cktl_info_all"
     body = {"query": {"match": {"name": {"query": keyword}}}}
     res = es.search(index=index, body=body)
+    # elastic과 통신하기 위한 함수. es에는 elastic의 주소와 id, pw가 담긴다
+    # index는 kibana에서 미리 생성해둔 index pattern을 str 형태로 담아준다
+    # 사용자의 다소 부정확한 입력패턴을 고려해 match_phrase 대신 match 를 사용한다
     return res["hits"]
 
 
@@ -115,6 +118,7 @@ def search_django2(keyword):
     index = "cktl_info_all"
     body = {"query": {"match_phrase": {"name": {"query": keyword}}}}
     res = es.search(index=index, body=body)
+    # search_django에서 elastic에서 호출된 결과를 바탕으로 조회함에 따라 정확히 일치하도록 match_phrase를 사용한다
     return res["hits"]
 
 
@@ -124,10 +128,11 @@ def search_django2(keyword):
 def gower(keyword):
     # df = pd.read_csv("static\csv\gower_df.csv")
     df = pd.read_csv("static/csv/gower_df.csv")
-
+    # 유사도를 나타내는 gower table을 load 한다
     temp = df[keyword].sort_values(ascending=True)[:5].index
     search_series = df.iloc[temp]["name"]
     search_list = search_series.to_list()
+    # 유사한 칵테일을 5개 가져와 이름을 list로 만들어 준다 (이때 0번째에는 반드시 검색 keyword가 위치한다)
     return search_list
 
 
@@ -144,11 +149,14 @@ def cluster(request):
 # 비슷한 칵테일 추천
 def clusterAjax(request):
     key = request.build_absolute_uri().split("?")
-    print(key[1])
+    # get 방식으로 검색어를 받아옴에 따라 ?를 기준으로 문자열을 잘라준다
     try:
         target = gower(search_django(key[1])["hits"][0]["_source"]["name"])
+        # key[1]에 검색어가 위치함에 따라 미리 제작해둔 쿼리문으로 elastic과 통신한다
+        # 결과물을 적절히 ajax로 적절히 가져가기 hits의 0번째에서 내용들을 추출한다
     except IndexError:
         target = {}
+        # 결과값이 존재하지 않을 경우 빈 dict를 target에 부여한다
     print(target)
 
     temp = {}
@@ -156,12 +164,19 @@ def clusterAjax(request):
     try:
         for i in target[1:]:
             temp["item" + str(counter)] = search_django2(i)["hits"][0]["_source"]
+            # gower로 불러온 칵테일들의 이름마다 다시 elastic과 통신해 재료를 파악한다
             counter += 1
     except TypeError:
         temp = {}
-    print(temp)
+    # print(temp)
+    # 최종 완성된 데이터를 json 형태로 가공 후 html에 ajax 통신으로 넘겨준다
     return JsonResponse(temp)
 
+
+# 정리하면 Cluster가 작동하는 순서는 다음과 같다
+# user의 입력 > search_django 에서 match 쿼리로 지원하는 칵테일인지 여부 판단 > 지원하는 경우 gower 테이블을 바탕으로 유사한 칵테일 5개 추출
+# search_django2 에서 유사한 칵테일들의 정보 확보 > ajax 통신으로 데이터 표시
+# 시행 중 오류 발생 시 (지원하지 않는 칵테일 등의) 빈 dict를 return 해 JS에서 alert 호출하여 중단처리
 
 # 지금 만들 수 있는 칵테일은?
 def ingredient(request):
@@ -176,6 +191,8 @@ def ingredient(request):
 
 
 def ing_query_maker(list):
+    # range 쿼리를 사용하기 위해 특정 재료가 0 초과일 경우 포함하는 것으로 판단한다
+    # 다양한 재료들이 올 수 있으므로 쿼리 제작을 위해 range 쿼리를 제작하기 위해 반복문을 사용한다
     temp = []
 
     for i in list:
@@ -194,7 +211,8 @@ def search_django_ing(keyword):
     index = "cktl_info_all"
     body = f'{{"query": {{"bool": {{"must": {keyword}}}}}, "size": 300}}'
     body2 = json.loads(body.replace("'", '"'))
-    # print(body2)
+    # 추후 ing_query_maker에서 받은 값을 keyword로 넣어 쿼리문을 완성한다
+    # 이때 size로 300개를 주는 이유는 어떤 조합을 골라도 300건을 초과하지 않기 때문 (필요시 적당히 조정하면 된다)
     res = es.search(index=index, body=body2)
     return res["hits"]["hits"]
 
@@ -202,16 +220,21 @@ def search_django_ing(keyword):
 def ingredientajax(request):
     ingredient = request.POST.getlist("ingredient")
     ing_query = ing_query_maker(ingredient)
-
-    # key = search_django_ing(k1)
-    # print(ing_query)
+    # POST 형태로 받아온 사용자의 선택을 list로 변환해서 range에 해당하는 쿼리문 제작을 시도한다
     key = search_django_ing(ing_query)
+    # range에 해당하는 쿼리문을 search 쿼리문에 넣어 최종 elastic과 통신한다
     item_name = []
     for i in range(len(key)):
         item_name.append(key[i]["_source"]["name"])
     item_list = {"item": item_name}
+    # 반복문을 이용해 응답받은 json 중 칵테일의 이름만 추출해 dict 형태로 가공해 ajax로 넘겨준다
     print(item_list)
     return JsonResponse(item_list)
+
+
+# Ingredient가 작동하는 방식은 다음과 같다
+# 사용자의 선택을 post 형태로 받는다 > list로 변환 후 list 안의 재료마다 gt:0의 range 쿼리를 작성한다 > 앞서 작성한 range 쿼리들을 search 쿼리에 탑재한다
+# elastic과 통신해 받은 결과를 이름만 추출한다 > ajax로 html에 넘겨준다 > JS로 동적 테이블 생성을 통해 사용자에게 정보를 표시한다
 
 
 # 이 칵테일의 이름은?

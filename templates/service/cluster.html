@@ -7,429 +7,352 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-  <head>
-    <title>Landing - Forty by HTML5 UP</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="{% static 'forty/assets/css/main.css' %}" />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="{% static 'forty/assets/css/noscript.css' %}"
-    /></noscript>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-      $(function () {
-        $("#emp_search").click(function () {
-          var empid = $("input[name=empid]").val();
-          console.log("ajax통신전: " + empid);
+<head>
+  <title>Landing - Forty by HTML5 UP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="{% static 'forty/assets/css/main.css' %}" />
+  <noscript>
+    <link rel="stylesheet" href="{% static 'forty/assets/css/noscript.css' %}" />
+  </noscript>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-          $.ajax({
-            url: "{% url 'clusterajax' %}",
-            method: "get",
-            data: empid,
-            success: function (temp) {
-              console.log("통신 성공");
-              console.log(temp.item0);
-              if (temp.item0 == undefined) {
-                alert("지원하지 않는 칵테일입니다.");
-              } else {
-                const temp_item0 = temp.item0;
-                const item0_name = document.getElementById("item0_name");
-                const item0_detail_Glass =
-                  document.getElementById("item0_detail_Glass");
-                const item0_detail_Wine =
-                  document.getElementById("item0_detail_Wine");
-                const item0_detail_Liqueur = document.getElementById(
-                  "item0_detail_Liqueur"
-                );
-                const item0_detail_Rum =
-                  document.getElementById("item0_detail_Rum");
-                const item0_detail_Gin =
-                  document.getElementById("item0_detail_Gin");
-                const item0_detail_Vodka =
-                  document.getElementById("item0_detail_Vodka");
-                item0_name.innerHTML = temp_item0.name;
-                item0_detail_Glass.innerHTML = "Glass : " + temp_item0.Glass;
-                item0_detail_Wine.innerHTML = "Wine : " + temp_item0.Wine;
-                item0_detail_Liqueur.innerHTML =
-                  "Liqueur : " + temp_item0.Liqueur;
-                item0_detail_Rum.innerHTML = "Rum : " + temp_item0.Rum;
-                item0_detail_Gin.innerHTML = "Gin : " + temp_item0.Gin;
-                item0_detail_Vodka.innerHTML = "Vodka : " + temp_item0.Vodka;
+  <script>
+    $(function () {
+      $("#emp_search").click(function () {
+        var empid = $("input[name=empid]").val();
+        console.log("ajax통신전: " + empid);
 
-                const item0_img = document.getElementById("item0_img");
-                item0_img.innerHTML = `<img src="../../static/cnn_img/${temp_item0.name}.jpg" width="50", height="800" >`;
+        $.ajax({
+          url: "{% url 'clusterajax' %}",
+          method: "get",
+          data: empid,
+          success: function (temp) {
+            console.log("통신 성공");
+            console.log(temp.item0);
+            if (temp.item0 == undefined) {
+              alert("지원하지 않는 칵테일입니다.");
+            } else {
+              const temp_item0 = temp.item0;
+              const item0_name = document.getElementById("item0_name");
+              const item0_detail_Glass =
+                document.getElementById("item0_detail_Glass");
+              const item0_detail_Wine =
+                document.getElementById("item0_detail_Wine");
+              const item0_detail_Liqueur = document.getElementById(
+                "item0_detail_Liqueur"
+              );
+              const item0_detail_Rum =
+                document.getElementById("item0_detail_Rum");
+              const item0_detail_Gin =
+                document.getElementById("item0_detail_Gin");
+              const item0_detail_Vodka =
+                document.getElementById("item0_detail_Vodka");
+              item0_name.innerHTML = temp_item0.name;
+              item0_detail_Glass.innerHTML = "Glass : " + temp_item0.Glass;
+              item0_detail_Wine.innerHTML = "Wine : " + temp_item0.Wine;
+              item0_detail_Liqueur.innerHTML =
+                "Liqueur : " + temp_item0.Liqueur;
+              item0_detail_Rum.innerHTML = "Rum : " + temp_item0.Rum;
+              item0_detail_Gin.innerHTML = "Gin : " + temp_item0.Gin;
+              item0_detail_Vodka.innerHTML = "Vodka : " + temp_item0.Vodka;
 
-                const temp_item1 = temp.item1;
-                const item1_name = document.getElementById("item1_name");
-                const item1_detail_Glass =
-                  document.getElementById("item1_detail_Glass");
-                const item1_detail_Wine =
-                  document.getElementById("item1_detail_Wine");
-                const item1_detail_Liqueur = document.getElementById(
-                  "item1_detail_Liqueur"
-                );
-                const item1_detail_Rum =
-                  document.getElementById("item1_detail_Rum");
-                const item1_detail_Gin =
-                  document.getElementById("item1_detail_Gin");
-                const item1_detail_Vodka =
-                  document.getElementById("item1_detail_Vodka");
-                item1_name.innerHTML = temp_item1.name;
-                item1_detail_Glass.innerHTML = "Glass : " + temp_item1.Glass;
-                item1_detail_Wine.innerHTML = "Wine : " + temp_item1.Wine;
-                item1_detail_Liqueur.innerHTML =
-                  "Liqueur : " + temp_item1.Liqueur;
-                item1_detail_Rum.innerHTML = "Rum : " + temp_item1.Rum;
-                item1_detail_Gin.innerHTML = "Gin : " + temp_item1.Gin;
-                item1_detail_Vodka.innerHTML = "Vodka : " + temp_item1.Vodka;
+              const item0_img = document.getElementById("item0_img");
+              item0_img.innerHTML = `<img src="../../static/cnn_img/${temp_item0.name}.jpg" width="50", height="800" >`;
 
-                const item1_img = document.getElementById("item1_img");
-                item1_img.innerHTML = `<img src="../../static/cnn_img/${temp_item1.name}.jpg" width="50", height="800" >`;
+              const temp_item1 = temp.item1;
+              const item1_name = document.getElementById("item1_name");
+              const item1_detail_Glass =
+                document.getElementById("item1_detail_Glass");
+              const item1_detail_Wine =
+                document.getElementById("item1_detail_Wine");
+              const item1_detail_Liqueur = document.getElementById(
+                "item1_detail_Liqueur"
+              );
+              const item1_detail_Rum =
+                document.getElementById("item1_detail_Rum");
+              const item1_detail_Gin =
+                document.getElementById("item1_detail_Gin");
+              const item1_detail_Vodka =
+                document.getElementById("item1_detail_Vodka");
+              item1_name.innerHTML = temp_item1.name;
+              item1_detail_Glass.innerHTML = "Glass : " + temp_item1.Glass;
+              item1_detail_Wine.innerHTML = "Wine : " + temp_item1.Wine;
+              item1_detail_Liqueur.innerHTML =
+                "Liqueur : " + temp_item1.Liqueur;
+              item1_detail_Rum.innerHTML = "Rum : " + temp_item1.Rum;
+              item1_detail_Gin.innerHTML = "Gin : " + temp_item1.Gin;
+              item1_detail_Vodka.innerHTML = "Vodka : " + temp_item1.Vodka;
 
-                const temp_item2 = temp.item2;
-                const item2_name = document.getElementById("item2_name");
-                const item2_detail_Glass =
-                  document.getElementById("item2_detail_Glass");
-                const item2_detail_Wine =
-                  document.getElementById("item2_detail_Wine");
-                const item2_detail_Liqueur = document.getElementById(
-                  "item2_detail_Liqueur"
-                );
-                const item2_detail_Rum =
-                  document.getElementById("item2_detail_Rum");
-                const item2_detail_Gin =
-                  document.getElementById("item2_detail_Gin");
-                const item2_detail_Vodka =
-                  document.getElementById("item2_detail_Vodka");
-                item2_name.innerHTML = temp_item2.name;
-                item2_detail_Glass.innerHTML = "Glass : " + temp_item2.Glass;
-                item2_detail_Wine.innerHTML = "Wine : " + temp_item2.Wine;
-                item2_detail_Liqueur.innerHTML =
-                  "Liqueur : " + temp_item2.Liqueur;
-                item2_detail_Rum.innerHTML = "Rum : " + temp_item2.Rum;
-                item2_detail_Gin.innerHTML = "Gin : " + temp_item2.Gin;
-                item2_detail_Vodka.innerHTML = "Vodka : " + temp_item2.Vodka;
+              const item1_img = document.getElementById("item1_img");
+              item1_img.innerHTML = `<img src="../../static/cnn_img/${temp_item1.name}.jpg" width="50", height="800" >`;
 
-                const item2_img = document.getElementById("item2_img");
-                item2_img.innerHTML = `<img src="../../static/cnn_img/${temp_item2.name}.jpg" width="50", height="800" >`;
+              const temp_item2 = temp.item2;
+              const item2_name = document.getElementById("item2_name");
+              const item2_detail_Glass =
+                document.getElementById("item2_detail_Glass");
+              const item2_detail_Wine =
+                document.getElementById("item2_detail_Wine");
+              const item2_detail_Liqueur = document.getElementById(
+                "item2_detail_Liqueur"
+              );
+              const item2_detail_Rum =
+                document.getElementById("item2_detail_Rum");
+              const item2_detail_Gin =
+                document.getElementById("item2_detail_Gin");
+              const item2_detail_Vodka =
+                document.getElementById("item2_detail_Vodka");
+              item2_name.innerHTML = temp_item2.name;
+              item2_detail_Glass.innerHTML = "Glass : " + temp_item2.Glass;
+              item2_detail_Wine.innerHTML = "Wine : " + temp_item2.Wine;
+              item2_detail_Liqueur.innerHTML =
+                "Liqueur : " + temp_item2.Liqueur;
+              item2_detail_Rum.innerHTML = "Rum : " + temp_item2.Rum;
+              item2_detail_Gin.innerHTML = "Gin : " + temp_item2.Gin;
+              item2_detail_Vodka.innerHTML = "Vodka : " + temp_item2.Vodka;
 
-                const temp_item3 = temp.item3;
-                const item3_name = document.getElementById("item3_name");
-                const item3_detail_Glass =
-                  document.getElementById("item3_detail_Glass");
-                const item3_detail_Wine =
-                  document.getElementById("item3_detail_Wine");
-                const item3_detail_Liqueur = document.getElementById(
-                  "item3_detail_Liqueur"
-                );
-                const item3_detail_Rum =
-                  document.getElementById("item3_detail_Rum");
-                const item3_detail_Gin =
-                  document.getElementById("item3_detail_Gin");
-                const item3_detail_Vodka =
-                  document.getElementById("item3_detail_Vodka");
-                item3_name.innerHTML = temp_item3.name;
-                item3_detail_Glass.innerHTML = "Glass : " + temp_item3.Glass;
-                item3_detail_Wine.innerHTML = "Wine : " + temp_item3.Wine;
-                item3_detail_Liqueur.innerHTML =
-                  "Liqueur : " + temp_item3.Liqueur;
-                item3_detail_Rum.innerHTML = "Rum : " + temp_item3.Rum;
-                item3_detail_Gin.innerHTML = "Gin : " + temp_item3.Gin;
-                item3_detail_Vodka.innerHTML = "Vodka : " + temp_item3.Vodka;
+              const item2_img = document.getElementById("item2_img");
+              item2_img.innerHTML = `<img src="../../static/cnn_img/${temp_item2.name}.jpg" width="50", height="800" >`;
 
-                const item3_img = document.getElementById("item3_img");
-                item3_img.innerHTML = `<img src="../../static/cnn_img/${temp_item3.name}.jpg" width="50", height="800" >`;
+              const temp_item3 = temp.item3;
+              const item3_name = document.getElementById("item3_name");
+              const item3_detail_Glass =
+                document.getElementById("item3_detail_Glass");
+              const item3_detail_Wine =
+                document.getElementById("item3_detail_Wine");
+              const item3_detail_Liqueur = document.getElementById(
+                "item3_detail_Liqueur"
+              );
+              const item3_detail_Rum =
+                document.getElementById("item3_detail_Rum");
+              const item3_detail_Gin =
+                document.getElementById("item3_detail_Gin");
+              const item3_detail_Vodka =
+                document.getElementById("item3_detail_Vodka");
+              item3_name.innerHTML = temp_item3.name;
+              item3_detail_Glass.innerHTML = "Glass : " + temp_item3.Glass;
+              item3_detail_Wine.innerHTML = "Wine : " + temp_item3.Wine;
+              item3_detail_Liqueur.innerHTML =
+                "Liqueur : " + temp_item3.Liqueur;
+              item3_detail_Rum.innerHTML = "Rum : " + temp_item3.Rum;
+              item3_detail_Gin.innerHTML = "Gin : " + temp_item3.Gin;
+              item3_detail_Vodka.innerHTML = "Vodka : " + temp_item3.Vodka;
 
-                const p_tag = document.getElementsByTagName("p");
-                for (asdf of p_tag) {
-                  asdf.style.padding = "0.5px";
-                  asdf.style.margin = "0.5px";
-                }
+              const item3_img = document.getElementById("item3_img");
+              item3_img.innerHTML = `<img src="../../static/cnn_img/${temp_item3.name}.jpg" width="50", height="800" >`;
+
+              const p_tag = document.getElementsByTagName("p");
+              for (asdf of p_tag) {
+                asdf.style.padding = "0.5px";
+                asdf.style.margin = "0.5px";
               }
-            },
-            fail: function () {
-              console.log("통신 실패");
-              alert("지원하지 않는 칵테일입니다");
-            },
-          });
+            }
+          },
+          fail: function () {
+            console.log("통신 실패");
+            alert("지원하지 않는 칵테일입니다");
+          },
         });
       });
-    </script>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <!-- Note: The "styleN" class below should match that of the banner element. -->
-      <header id="header" class="alt">
-        <a href="/service/" class="logo"><strong>Cocktail</strong></a>
+    });
+  </script>
+</head>
 
-        {% if login_session %} 안녕하세요: {{ email }}
-        <a href="/logout/"><button>로그아웃</button></a>
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <!-- Note: The "styleN" class below should match that of the banner element. -->
+    <header id="header" class="alt">
+      <a href="/service/" class="logo"><strong>Cocktail</strong></a>
 
-        {% endif %}
+      {% if login_session %} 안녕하세요: {{ email }}
+      <a href="/logout/"><button>로그아웃</button></a>
 
-        <nav>
-          <a href="#menu">Menu</a>
-        </nav>
-      </header>
+      {% endif %}
 
-      <!-- Menu -->
-      <nav id="menu">
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="landing.html">Landing</a></li>
-          <li><a href="generic.html">Generic</a></li>
-          <li><a href="elements.html">Elements</a></li>
-        </ul>
-        <ul class="actions stacked">
-          <li><a href="#" class="button primary fit">Get Started</a></li>
-          <li><a href="#" class="button fit">Log In</a></li>
-        </ul>
+      <nav>
+        <a href="#menu">Menu</a>
       </nav>
+    </header>
 
-      <!-- Banner -->
-      <!-- Note: The "styleN" class below should match that of the header element. -->
-      <section id="banner" class="style2">
-        <div class="inner">
-          <span class="image">
-            <img
-              href="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-              alt=""
-            />
-          </span>
-          <header class="major">
-            <h1>Cluster</h1>
-          </header>
-          <div class="content">
-            <p>
-              대충 어떠한 기술로 했다.<br />
-              지원하는 칵테일1, 칵테일 2, 칵테일3<br />
-              조회 버튼을 클릭하는 순간, ajax로 url.py에서 name =
-              'clusterAjax'와 통신을 진행한다.<br />
-              클러스터 모델과 통신을 완료한 다음. 결과물을 받아, javascript의
-              innerHTML 혹은 set과 같은 것들을 이용해서<br />
-              아래 있는 비어 있는 이미지 사진, 칵테일 이름, 설명을 재 작성을
-              한다.<br />
-              이렇게 해서, 새로고침 없이 고객에서 정보를 제공해준다.
-            </p>
-          </div>
+    <!-- Menu -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="../cluster/">Find Similar Cocktail</a></li>
+        <li><a href="../ingredient/">Ingredients based Search</a></li>
+        <li><a href="../image/">Image Search</a></li>
+        <li><a href="../changeImage/">Image Changer</a></li>
+      </ul>
+      <ul class="actions stacked">
+        <li><a href="../" class="button primary fit">Go to Front page</a></li>
+        <li><a href="../.." class="button fit">Log Out</a></li>
+      </ul>
+    </nav>
+
+    <!-- Banner -->
+    <!-- Note: The "styleN" class below should match that of the header element. -->
+    <section id="banner" class="style2">
+      <div class="inner">
+        <span class="image">
+          <img href="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg" alt="" />
+        </span>
+        <header class="major">
+          <h1>Cluster</h1>
+        </header>
+        <div class="content">
+          <p style="font-size: 20px;">
+            입력받은 칵테일과 비슷한 칵테일을 알려드립니다.
+          </p>
         </div>
-      </section>
-
-      <!-- Main -->
-      <div id="main">
-        <!-- One -->
-        <section id="one">
-          <div class="inner">
-            <header class="major">
-              <h2>칵테일 이름 입력</h2>
-            </header>
-            <p>
-              칵테일 이름을 입력 받으면, 비슷한 유형의 칵테일을 추천합니다.
-              <br />
-              유효성 검사도 진행해라. 지원하지 않는 칵테일도 검사
-            </p>
-            <ul class="actions">
-              <input type="text" name="empid" />
-              <input type="button" value="조회" id="emp_search" />
-            </ul>
-          </div>
-        </section>
-
-        <!-- Two -->
-        <section id="two" class="spotlights">
-          <section>
-            <a class="image" id="item0_img"> </a>
-            <div class="content">
-              <div class="inner">
-                <header class="major">
-                  <h3 id="item0_name">No.1</h3>
-                </header>
-                <p id="item0_detail_Glass"></p>
-                <p id="item0_detail_Wine"></p>
-                <p id="item0_detail_Liqueur"></p>
-                <p id="item0_detail_Rum"></p>
-                <p id="item0_detail_Gin"></p>
-                <p id="item0_detail_Vodka"></p>
-
-                <ul class="actions">
-                  <li><a href="generic.html" class="button">Learn more</a></li>
-                </ul>
-              </div>
-            </div>
-          </section>
-          <section>
-            <a class="image" id="item1_img"> </a>
-            <div class="content">
-              <div class="inner">
-                <header class="major">
-                  <h3 id="item1_name">No.2</h3>
-                </header>
-                <p id="item1_detail_Glass"></p>
-                <p id="item1_detail_Wine"></p>
-                <p id="item1_detail_Liqueur"></p>
-                <p id="item1_detail_Rum"></p>
-                <p id="item1_detail_Gin"></p>
-                <p id="item1_detail_Vodka"></p>
-                <ul class="actions">
-                  <li><a href="generic.html" class="button">Learn more</a></li>
-                </ul>
-              </div>
-            </div>
-          </section>
-          <section>
-            <a class="image" id="item2_img"> </a>
-            <div class="content">
-              <div class="inner">
-                <header class="major">
-                  <h3 id="item2_name">No.3</h3>
-                </header>
-                <p id="item2_detail_Glass"></p>
-                <p id="item2_detail_Wine"></p>
-                <p id="item2_detail_Liqueur"></p>
-                <p id="item2_detail_Rum"></p>
-                <p id="item2_detail_Gin"></p>
-                <p id="item2_detail_Vodka"></p>
-                <ul class="actions">
-                  <li><a href="generic.html" class="button">Learn more</a></li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <a class="image" id="item3_img"> </a>
-            <div class="content">
-              <div class="inner">
-                <header class="major">
-                  <h3 id="item3_name">No.4</h3>
-                </header>
-                <p id="item3_detail_Glass"></p>
-                <p id="item3_detail_Wine"></p>
-                <p id="item3_detail_Liqueur"></p>
-                <p id="item3_detail_Rum"></p>
-                <p id="item3_detail_Gin"></p>
-                <p id="item3_detail_Vodka"></p>
-                <ul class="actions">
-                  <li><a href="generic.html" class="button">Learn more</a></li>
-                </ul>
-              </div>
-            </div>
-          </section>
-        </section>
-
-        <!-- Three -->
       </div>
+    </section>
 
-      <!-- Contact -->
-      <section id="contact">
+    <!-- Main -->
+    <div id="main">
+      <!-- One -->
+      <section id="one">
         <div class="inner">
-          <section>
-            <form method="post" action="#">
-              <div class="fields">
-                <div class="field half">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" id="name" />
-                </div>
-                <div class="field half">
-                  <label for="email">Email</label>
-                  <input type="text" name="email" id="email" />
-                </div>
-                <div class="field">
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" rows="6"></textarea>
-                </div>
-              </div>
-              <ul class="actions">
-                <li>
-                  <input type="submit" value="Send Message" class="primary" />
-                </li>
-                <li><input type="reset" value="Clear" /></li>
-              </ul>
-            </form>
-          </section>
-          <section class="split">
-            <section>
-              <div class="contact-method">
-                <span class="icon solid alt fa-envelope"></span>
-                <h3>Email</h3>
-                <a href="#">information@untitled.tld</a>
-              </div>
-            </section>
-            <section>
-              <div class="contact-method">
-                <span class="icon solid alt fa-phone"></span>
-                <h3>Phone</h3>
-                <span>(000) 000-0000 x12387</span>
-              </div>
-            </section>
-            <section>
-              <div class="contact-method">
-                <span class="icon solid alt fa-home"></span>
-                <h3>Address</h3>
-                <span
-                  >1234 Somewhere Road #5432<br />
-                  Nashville, TN 00000<br />
-                  United States of America</span
-                >
-              </div>
-            </section>
-          </section>
+          <header class="major">
+            <h2>칵테일 이름 입력</h2>
+          </header>
+          <p>
+            칵테일 이름을 입력 받으면, 비슷한 유형의 칵테일을 추천합니다.<br />
+            * 잔, 베이스(재료) 등을 종합하여 비슷한 칵테일을 판단합니다.
+
+          </p>
+          <ul class="actions">
+            <input type="text" name="empid" />
+            <input type="button" value="조회" id="emp_search" />
+          </ul>
         </div>
       </section>
 
-      <!-- Footer -->
-      <footer id="footer">
-        <div class="inner">
-          <ul class="icons">
-            <li>
-              <a href="#" class="icon brands alt fa-twitter"
-                ><span class="label">Twitter</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands alt fa-facebook-f"
-                ><span class="label">Facebook</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands alt fa-instagram"
-                ><span class="label">Instagram</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands alt fa-github"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands alt fa-linkedin-in"
-                ><span class="label">LinkedIn</span></a
-              >
-            </li>
-          </ul>
-          <ul class="copyright">
-            <li>&copy; Untitled</li>
-            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-          </ul>
-        </div>
-      </footer>
+      <!-- Two -->
+      <section id="two" class="spotlights">
+        <section>
+          <a class="image" id="item0_img"> </a>
+          <div class="content">
+            <div class="inner">
+              <header class="major">
+                <h3 id="item0_name">No.1</h3>
+              </header>
+              <p id="item0_detail_Glass"></p>
+              <p id="item0_detail_Wine"></p>
+              <p id="item0_detail_Liqueur"></p>
+              <p id="item0_detail_Rum"></p>
+              <p id="item0_detail_Gin"></p>
+              <p id="item0_detail_Vodka"></p>
+
+              <ul class="actions">
+
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <a class="image" id="item1_img"> </a>
+          <div class="content">
+            <div class="inner">
+              <header class="major">
+                <h3 id="item1_name">No.2</h3>
+              </header>
+              <p id="item1_detail_Glass"></p>
+              <p id="item1_detail_Wine"></p>
+              <p id="item1_detail_Liqueur"></p>
+              <p id="item1_detail_Rum"></p>
+              <p id="item1_detail_Gin"></p>
+              <p id="item1_detail_Vodka"></p>
+              <ul class="actions">
+
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <a class="image" id="item2_img"> </a>
+          <div class="content">
+            <div class="inner">
+              <header class="major">
+                <h3 id="item2_name">No.3</h3>
+              </header>
+              <p id="item2_detail_Glass"></p>
+              <p id="item2_detail_Wine"></p>
+              <p id="item2_detail_Liqueur"></p>
+              <p id="item2_detail_Rum"></p>
+              <p id="item2_detail_Gin"></p>
+              <p id="item2_detail_Vodka"></p>
+              <ul class="actions">
+
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <a class="image" id="item3_img"> </a>
+          <div class="content">
+            <div class="inner">
+              <header class="major">
+                <h3 id="item3_name">No.4</h3>
+              </header>
+              <p id="item3_detail_Glass"></p>
+              <p id="item3_detail_Wine"></p>
+              <p id="item3_detail_Liqueur"></p>
+              <p id="item3_detail_Rum"></p>
+              <p id="item3_detail_Gin"></p>
+              <p id="item3_detail_Vodka"></p>
+              <ul class="actions">
+
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Three -->
     </div>
 
-    <!-- Scripts -->
-    <script src="{% static 'forty/assets/js/jquery.min.js' %}"></script>
-    <script src="{% static 'forty/assets/js/jquery.scrolly.min.js' %}"></script>
-    <script src="{% static 'forty/assets/js/jquery.scrollex.min.js' %}"></script>
-    <script src="{% static 'forty/assets/js/browser.min.js' %}"></script>
-    <script src="{% static 'forty/assets/js/breakpoints.min.js' %}"></script>
-    <script src="{% static 'forty/assets/js/util.js' %}"></script>
-    <script src="{% static 'forty/assets/js/main.js' %}"></script>
-  </body>
+    <!-- Contact -->
+
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li>
+            <a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a>
+          </li>
+          <li>
+            <a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
+          </li>
+          <li>
+            <a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
+          </li>
+          <li>
+            <a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a>
+          </li>
+          <li>
+            <a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a>
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; My Little Bartender</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{% static 'forty/assets/js/jquery.min.js' %}"></script>
+  <script src="{% static 'forty/assets/js/jquery.scrolly.min.js' %}"></script>
+  <script src="{% static 'forty/assets/js/jquery.scrollex.min.js' %}"></script>
+  <script src="{% static 'forty/assets/js/browser.min.js' %}"></script>
+  <script src="{% static 'forty/assets/js/breakpoints.min.js' %}"></script>
+  <script src="{% static 'forty/assets/js/util.js' %}"></script>
+  <script src="{% static 'forty/assets/js/main.js' %}"></script>
+</body>
+
 </html>

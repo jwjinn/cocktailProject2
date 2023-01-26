@@ -7,303 +7,244 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Landing - Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="{% static 'forty/assets/css/main.css' %}" />
-		<noscript><link rel="stylesheet" href="{% static 'forty/assets/css/noscript.css' %}" /></noscript>
-         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <script>
-            var formData = new FormData();
-            var returnCocktail;
-            var howToMake;
+<head>
+	<title>Landing - Forty by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{% static 'forty/assets/css/main.css' %}" />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'forty/assets/css/noscript.css' %}" />
+	</noscript>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-            $(document).on('click', '#files_send', function () {
-                console.log("완료버튼 눌렀다.")
+	<script>
+		var formData = new FormData();
+		var returnCocktail;
+		var howToMake;
 
-
-    for(var i=0; i<$('#photo_upload')[0].files.length; i++){
-        formData.append('uploadFile', $('#photo_upload')[0].files[i]);
-    }
+		$(document).on('click', '#files_send', function () {
+			console.log("완료버튼 눌렀다.")
 
 
-
-    $.ajax({
-        url: '{% url 'imageAjax' %}',
-        data: formData,
-        processData: false,
-        contentType: false,
-        type: 'POST',
-        success: function (data) {
-            alert("이미지 업로드 성공");
-
-            var cocktailName = document.getElementsByClassName("cocktailName");
-            var cocktailImage = document.getElementsByClassName("cocktailImage");
-            var howTomakeDOM = document.getElementsByClassName("howToMake");
-
-            returnCocktail = data['cnnResult'];
-
-            console.log(returnCocktail)
-
-            console.log(returnCocktail[0][0]);
-            console.log(returnCocktail[1][0]);
-            console.log(returnCocktail[2][0]);
-            console.log(returnCocktail[3][0]);
-
-
-            {#칵테일 이름 조회#}
-            cocktailName[0].innerHTML = returnCocktail[0][0];
-            cocktailName[1].innerHTML = returnCocktail[1][0];
-            cocktailName[2].innerHTML = returnCocktail[2][0];
-            cocktailName[3].innerHTML = returnCocktail[3][0];
-
-
-            {#  칵테일 그림 매핑 #}
-
-            console.log("==================================");
-
-
-            {#cocktailImage[0].setAttribute("src", "/static/cnn/Alexander.jpg");#}
-            cocktailImage[0].setAttribute("src", "/static/cnn/"+$(cocktailName[0]).text() + ".jpg");
-            cocktailImage[1].setAttribute("src", "/static/cnn/"+$(cocktailName[1]).text() + ".jpg");
-            cocktailImage[2].setAttribute("src", "/static/cnn/"+$(cocktailName[2]).text() + ".jpg");
-
-
-            {#  칵테일 설명 리턴  #}
-
-            {#howTomakeDOM[0].innerHTML = howToMake[0];#}
-            console.log("==================================");
-
-            howTomakeDOM[0].innerHTML=returnCocktail[0][1];
-            howTomakeDOM[1].innerHTML=returnCocktail[1][1];
-            howTomakeDOM[2].innerHTML=returnCocktail[2][1];
-            howTomakeDOM[3].innerHTML=returnCocktail[3][1];
+			for (var i = 0; i < $('#photo_upload')[0].files.length; i++) {
+				formData.append('uploadFile', $('#photo_upload')[0].files[i]);
+			}
 
 
 
-                }
-            });
+			$.ajax({
+				url: '{% url 'imageAjax' %}',
+				data: formData,
+				processData: false,
+				contentType: false,
+				type: 'POST',
+				success: function (data) {
+					alert("이미지 업로드 성공");
 
-});
+					var cocktailName = document.getElementsByClassName("cocktailName");
+					var cocktailImage = document.getElementsByClassName("cocktailImage");
+					var howTomakeDOM = document.getElementsByClassName("howToMake");
+
+					returnCocktail = data['cnnResult'];
+
+					console.log(returnCocktail)
+
+					console.log(returnCocktail[0][0]);
+					console.log(returnCocktail[1][0]);
+					console.log(returnCocktail[2][0]);
+					console.log(returnCocktail[3][0]);
 
 
-    </script>
+					{ #칵테일 이름 조회# }
+					cocktailName[0].innerHTML = returnCocktail[0][0];
+					cocktailName[1].innerHTML = returnCocktail[1][0];
+					cocktailName[2].innerHTML = returnCocktail[2][0];
+					cocktailName[3].innerHTML = returnCocktail[3][0];
+
+
+					{#  칵테일 그림 매핑 # }
+
+					console.log("==================================");
+
+
+					{ #cocktailImage[0].setAttribute("src", "/static/cnn/Alexander.jpg");# }
+					cocktailImage[0].setAttribute("src", "/static/cnn/" + $(cocktailName[0]).text() + ".jpg");
+					cocktailImage[1].setAttribute("src", "/static/cnn/" + $(cocktailName[1]).text() + ".jpg");
+					cocktailImage[2].setAttribute("src", "/static/cnn/" + $(cocktailName[2]).text() + ".jpg");
+
+
+					{#  칵테일 설명 리턴  # }
+
+					{ #howTomakeDOM[0].innerHTML = howToMake[0];# }
+					console.log("==================================");
+
+					howTomakeDOM[0].innerHTML = returnCocktail[0][1];
+					howTomakeDOM[1].innerHTML = returnCocktail[1][1];
+					howTomakeDOM[2].innerHTML = returnCocktail[2][1];
+					howTomakeDOM[3].innerHTML = returnCocktail[3][1];
+
+
+
+				}
+			});
+
+		});
+
+
+	</script>
 
 
 
 
-	</head>
-	<body class="is-preload">
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body class="is-preload">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="/service/" class="logo"><strong>Cocktail</strong></a>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<a href="/service/" class="logo"><strong>Cocktail</strong></a>
+
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+
+		<!-- Menu -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="../cluster/">Find Similar Cocktail</a></li>
+				<li><a href="../ingredient/">Ingredients based Search</a></li>
+				<li><a href="../image/">Image Search</a></li>
+				<li><a href="../changeImage/">Image Changer</a></li>
+			</ul>
+			<ul class="actions stacked">
+				<li><a href="../" class="button primary fit">Go to Front page</a></li>
+				<li><a href="../.." class="button fit">Log In</a></li>
+			</ul>
+		</nav>
+
+		<!-- Banner -->
+		<!-- Note: The "styleN" class below should match that of the header element. -->
+		<section id="banner" class="style2">
+			<div class="inner">
+
+				<header class="major">
+					<h1>이 칵테일의 이름은? </h1>
+				</header>
+				<div class="content">
+					<p>사진을 업로드 해주시면, 해당 칵테일의 이름을 알려드립니다.</p>
+
+
+					<strong>지원되는 칵테일: </strong>"Alexander, Aviation, B-52, Bacardi, Black Russian, Bramble, Casino,
+					Clover Club, Cosmopolitan, Cuba Libre, Daliquiri, Dry Martini, Gin Fizz, Grasshopper, John Collins,
+					Kamikaze, Kir,Long island iced Tea, Mai Tai, Manhattan, Margarita, Mojito, Moscow Mule,
+					Paradise,Pina Colada, Rusty Nail, Sea breeze, Sex on the beach, Singapore Sling, Tequila Sunrise,
+					Whiskey Sour, White lady"
+
+
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- One -->
+			<section id="one">
+				<div class="inner">
+					<header class="major">
+						<h2>이미지 업로드</h2>
 					</header>
 
+					<form id="ajaxform" method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<input type="file" multiple id="photo_upload">
+						<output id="list"></output>
+						<input type="button" value="완료" id="files_send">
+					</form>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+				</div>
+			</section>
 
-				<!-- Banner -->
-				<!-- Note: The "styleN" class below should match that of the header element. -->
-					<section id="banner" class="style2">
+			<!-- Two -->
+			<section id="two" class="spotlights">
+				<section>
+					<a href="generic.html" class="image">
+						<img alt="" data-position="center center" class="cocktailImage" />
+					</a>
+					<div class="content">
 						<div class="inner">
-
 							<header class="major">
-								<h1>이 칵테일의 이름은? </h1>
+								<h3 class="cocktailName">첫번째 칵테일</h3>
 							</header>
-							<div class="content">
-								<p>사진을 업로드 해주시면, 해당 칵테일의 이름을 알려드립니다.</p>
+							<p class="howToMake">표시되는 수치는 유사도입니다.</p>
 
-
-                                <strong>지원되는 칵테일: </strong>"Alexander, Aviation, B-52, Bacardi, Black Russian, Bramble, Casino, Clover Club, Cosmopolitan, Cuba Libre, Daliquiri, Dry Martini, Gin Fizz, Grasshopper, John Collins, Kamikaze, Kir,Long island iced Tea, Mai Tai, Manhattan, Margarita, Mojito, Moscow Mule, Paradise,Pina Colada, Rusty Nail, Sea breeze, Sex on the beach, Singapore Sling, Tequila Sunrise, Whiskey Sour, White lady"
-
-
-
-							</div>
 						</div>
-					</section>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- One -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h2>이미지 업로드</h2>
-									</header>
-
-                                    <form id="ajaxform" method="post" enctype="multipart/form-data">
-                                        {% csrf_token %}
-                                        <input type="file" multiple id="photo_upload">
-                                        <output id="list"></output>
-                                        <input type="button" value="완료" id="files_send">
-                                    </form>
-
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="spotlights">
-								<section>
-									<a href="generic.html" class="image">
-										<img alt="" data-position="center center" class="cocktailImage"/>
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3 class="cocktailName">첫번째 칵테일</h3>
-											</header>
-											<p class="howToMake">Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img alt="" data-position="top center" class="cocktailImage" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3 class="cocktailName">두번째 칵테일</h3>
-											</header>
-											<p class="howToMake">Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img alt="" data-position="25% 25%" class="cocktailImage"/>
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3 class="cocktailName">세번째 칵테일</h3>
-											</header>
-											<p class="howToMake">Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-
-										</div>
-									</div>
-								</section>
-							</section>
-
-						<!-- Three -->
-							<section>
-
-								<div class="inner">
-
-									<header class="major">
-                                        <h3 class="cocktailName">네번째 칵테일</h3>
-									</header>
-									<p class="howToMake">Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-
-								</div>
-							</section>
-
 					</div>
-
-				<!-- Contact -->
-					<section id="contact">
+				</section>
+				<section>
+					<a href="generic.html" class="image">
+						<img alt="" data-position="top center" class="cocktailImage" />
+					</a>
+					<div class="content">
 						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+							<header class="major">
+								<h3 class="cocktailName">두번째 칵테일</h3>
+							</header>
+							<p class="howToMake">표시되는 수치는 유사도입니다.</p>
 
-				<!-- Footer -->
-					<footer id="footer">
+						</div>
+					</div>
+				</section>
+				<section>
+					<a href="generic.html" class="image">
+						<img alt="" data-position="25% 25%" class="cocktailImage" />
+					</a>
+					<div class="content">
 						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
+							<header class="major">
+								<h3 class="cocktailName">세번째 칵테일</h3>
+							</header>
+							<p class="howToMake">표시되는 수치는 유사도입니다.</p>
+
 						</div>
-					</footer>
+					</div>
+				</section>
+			</section>
 
-			</div>
+			<!-- Three -->
+			<section>
 
-		<!-- Scripts -->
-			<script src="{% static 'forty/assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'forty/assets/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'forty/assets/js/jquery.scrollex.min.js' %}"></script>
-			<script src="{% static 'forty/assets/js/browser.min.js' %}"></script>
-			<script src="{% static 'forty/assets/js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'forty/assets/js/util.js' %}"></script>
-			<script src="{% static 'forty/assets/js/main.js' %}"></script>
+				<div class="inner">
 
-	</body>
+					<header class="major">
+						<h3 class="cocktailName">네번째 칵테일</h3>
+					</header>
+					<p class="howToMake">표시되는 수치는 유사도입니다.</p>
+
+				</div>
+			</section>
+
+		</div>
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'forty/assets/js/jquery.min.js' %}"></script>
+	<script src="{% static 'forty/assets/js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'forty/assets/js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'forty/assets/js/browser.min.js' %}"></script>
+	<script src="{% static 'forty/assets/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'forty/assets/js/util.js' %}"></script>
+	<script src="{% static 'forty/assets/js/main.js' %}"></script>
+
+</body>
+
 </html>
