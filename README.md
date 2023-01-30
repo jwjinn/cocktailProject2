@@ -6,13 +6,17 @@
 - 서버 구성 과정: https://velog.io/@woojoo121/series/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8%EA%B5%AC%EC%B6%95
 
 
+## 프로젝트 제출 서류 모음
+
+<strong>프로젝트서류모음 폴더에 모아두었다.</strong>
+
+
 ### 서비스 종류
 
 1. 유사 칵테일 조회 - clustering
 2. 특정 재료가 포함된 칵테일 조회 - elasticSearch 활용
 3. 이미지 기반 칵테일 추론 - CNN 모델링
 4. 칵테일 사진 화풍변경 - GAN
-
 
 
 ## 주의
